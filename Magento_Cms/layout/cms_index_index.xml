@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+   <reference name="head">
+      <!--/ to add from root ie. js/yourmodulename/script.js -->
+      <action method="addJs"><script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js" src_type="url" /></action>
+   </reference>
+
+    <body>
+	    <referenceBlock name="page.main.title" display="false"/>
+
+        <referenceContainer name="columns.top">
+			<block class="Magestore\Bannerslider\Block\SliderItem">
+				<action method="setSliderId">
+					<argument name="sliderId" xsi:type="string">1</argument>
+				</action>
+			</block>
+<!--
+			<block class="Magento\Cms\Block\Block" name="block_identifier">
+				<arguments>
+					<argument name="block_id" xsi:type="string">block_identifier</argument>
+				</arguments>
+			</block>
+-->
+            <block class="Magento\Framework\View\Element\Template" name="default_home_page" template="Magento_Cms::default/home.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="feat_cats" template="Magento_Cms::default/feat_cats.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="feat_tips" template="Magento_Cms::default/feat_tips.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="youtube" template="Magento_Cms::default/youtube.phtml"/>
+			<!-- <block class="Magento\Framework\View\Element\Template" name="feat_parts_grid" template="Magento_Cms::default/feat_parts_grid.phtml"/> -->
+			<!-- <block class="Magento\Framework\View\Element\Template" name="support" template="Magento_Cms::default/support.phtml"/> -->
+
+	        <container name="home.support.container" htmlTag="section" htmlId="section-support" htmlClass="blocks col-2 adjust-wrap support"
+after="feat_parts_grid">
+				<block class="Magento\Cms\Block\Widget\Block" name="free_shipping" template="Magento_Cms::widget/static_block/default.phtml">
+					<arguments>
+						<argument name="block_id" xsi:type="string">free_shipping</argument>
+					</arguments>
+				</block>
+				<block class="Magento\Cms\Block\Widget\Block" name="help" template="Magento_Cms::widget/static_block/default.phtml">
+					<arguments>
+						<argument name="block_id" xsi:type="string">help</argument>
+					</arguments>
+				</block>
+	        </container>
+
+            <block class="Magento\Framework\View\Element\Template" name="make_list" template="Magento_Cms::default/makelist.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

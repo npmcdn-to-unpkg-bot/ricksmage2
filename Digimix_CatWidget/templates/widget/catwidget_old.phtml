@@ -1,0 +1,30 @@
+<?php
+$categories = $this->getCategoryCollection();
+$categoryHelper = $this->getCategoryHelper();
+$canshowImg = $this->canShowImage();
+$title = $block->getTitle() ? __($block->getTitle()) : 'Categories';
+?>
+<div class="block-content catalog-category-list featured-categories">
+	<?php
+	//echo get_class($categories);
+	foreach($categories as $category):
+	    if (!$category->getIsActive()) {
+	        continue;
+	    } ?>
+	    <div class="category category-<?php echo $category->getId(); ?>">
+	    	<a href="<?php echo $categoryHelper->getCategoryUrl($category) ?>">
+	    		<?php if($canshowImg && $category->getImageUrl()):?>
+	    		<figure>
+		    		<div class="img-wrapper" style="background:url(<?= $category->getImageUrl(); ?>) center center;"></div>
+					<!-- <img src="<?= $category->getImageUrl(); ?>" alt="<?php echo $category->getName(); ?>" width="<?=$this->getImagewidth();?>" height="<?=$this->getImageheight()?>"/> -->
+	    			<figcaption>
+		    			<h3 class="cat-title"><?php echo $category->getName(); ?></h3>
+	    			</figcaption>
+	    		</figure>
+	    		<?php else:?>
+	    		<span class="cat-title"><?php echo $category->getName(); ?></span>
+	    		<?php endif;?>
+	    	</a>
+	    </div>
+	<?php endforeach; ?>
+</div>

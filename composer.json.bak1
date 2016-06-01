@@ -1,0 +1,22 @@
+{
+    "name": "digimix/theme-frontend-rme",
+    "description": "RME Magento 2 Theme",
+    "require": {
+        "php": "~7.0",
+        "magestore/module-bannerslider": "^1.6"
+    },
+    "type": "magento2-theme",
+    "version": "0.42.0-beta1",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "extra": {
+        "map": [
+            [
+                "*",
+                "frontend/Magento/blank"
+            ]
+        ]
+    }
+}

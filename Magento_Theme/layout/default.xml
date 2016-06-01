@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">200</argument>
+                <argument name="logo_img_height" xsi:type="number">33</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="footer">
+            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="switch/stores.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <move element="copyright" destination="before.body.end"/>
+
+		<referenceBlock name="footer">
+
+	        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_social" before="footer_links">
+	            <arguments>
+	                <argument name="css_class" xsi:type="string">footer links menu-social</argument>
+	            </arguments>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="facebook-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Facebook</argument>
+	                    <argument name="path" xsi:type="string">http://facebook.com/</argument>
+		                <argument name="attributes" xsi:type="array">
+							<item name="class" xsi:type="string">icon menu-facebook</item>
+						</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="twitter-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Twitter</argument>
+	                    <argument name="path" xsi:type="string">http://twitter.com/</argument>
+		                <argument name="attributes" xsi:type="array">
+							<item name="class" xsi:type="string">icon menu-twitter</item>
+						</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="youtube-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Youtube</argument>
+	                    <argument name="path" xsi:type="string">http://youtube.com/</argument>
+		                <argument name="attributes" xsi:type="array">
+							<item name="class" xsi:type="string">icon menu-youtube</item>
+						</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="blog-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">blog.ricksmotorsportelectric.com
+</argument>
+	                    <argument name="path" xsi:type="string">tips</argument>
+		                <argument name="attributes" xsi:type="array">
+							<item name="class" xsi:type="string">menu-blog</item>
+						</argument>
+	                </arguments>
+	            </block>
+
+	        </block>
+
+	        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_blog" before="footer_links">
+	            <arguments>
+	                <argument name="css_class" xsi:type="string">footer links menu-blog</argument>
+	            </arguments>
+	        </block>
+
+	        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_about" after="footer_links">
+	            <arguments>
+	                <argument name="css_class" xsi:type="string">footer links about</argument>
+	                <argument name="css_id" xsi:type="string">about</argument>
+
+                    <argument name="attributes" xsi:type="array">
+                        <item name="data-action" xsi:type="string">About</item>
+                    </argument>
+	            </arguments>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="about-link" before="-">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">About Us</argument>
+	                    <argument name="path" xsi:type="string">about</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="contact-us-link" after="about-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string" translate="true">Contact Us</argument>
+	                    <argument name="path" xsi:type="string">contact</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="privacy-policy-link" after="contact-us-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Privacy and Cookie Policy</argument>
+	                    <argument name="path" xsi:type="string">privacy-policy-cookie-restriction-mode</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="sales-disclaimer-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Sales Disclaimer</argument>
+	                    <argument name="path" xsi:type="string">sales-disclaimer</argument>
+	                </arguments>
+	            </block>
+
+	        </block>
+
+
+	        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_policies" after="footer_links">
+	            <arguments>
+	                <argument name="css_class" xsi:type="string">footer links policies</argument>
+	            </arguments>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="shipping-policy-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Shipping Policy</argument>
+	                    <argument name="path" xsi:type="string">shipping-policy</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="international-orders-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">International Orders</argument>
+	                    <argument name="path" xsi:type="string">international-orders</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="core-charges-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Core Exchange Policy</argument>
+	                    <argument name="path" xsi:type="string">core-exchange-policy</argument>
+	                </arguments>
+	            </block>
+
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="warranty-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Warranty Policy</argument>
+	                    <argument name="path" xsi:type="string">warranty-policy</argument>
+	                </arguments>
+	            </block>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="map-policy-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">MAP Policy</argument>
+	                    <argument name="path" xsi:type="string">map-policy</argument>
+	                </arguments>
+	            </block>
+
+	        </block>
+
+	        <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_account" after="footer_links">
+	            <arguments>
+	                <argument name="css_class" xsi:type="string">footer links account</argument>
+	            </arguments>
+	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="my-account-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">My Account</argument>
+	                    <argument name="path" xsi:type="string">account</argument>
+	                </arguments>
+	            </block>
+
+	             <block class="Magento\Sales\Block\Guest\Link" name="sales-guest-checkout-link" after="my-account-link">
+	                <arguments>
+	                    <argument name="label" xsi:type="string">Cart</argument>
+	                    <argument name="path" xsi:type="string">checkout/cart</argument>
+	                </arguments>
+	            </block>
+	        </block>
+
+		</referenceBlock>
+
+    </body>
+</page>

@@ -1,0 +1,40 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (https://www.amasty.com)
+ * @package Amasty_Finder
+ */
+?>
+<?php
+/**
+ * Copyright © 2015 Amasty. All rights reserved.
+ */
+/**
+ * @var $block \Amasty\Finder\Block\Form
+ */
+?>
+<?php $finderId = 'amfinder_' . uniqid(); ?>
+<div class="make-catelog" id="<?php echo $finderId ?>Container">
+    <input type="hidden" name="finder_id" value="<?php echo $block->getId() ?>"/>
+    <input type="hidden" name="back_url" value="<?php echo $block->getBackUrl() ?>"/>
+    <input type="hidden" name="category_id" value="<?php echo $block->getCurrentCategoryId() ?>"/>
+    <?php foreach ($block->getFinder()->getDropdowns() as $dropdown): ?>
+        <div class="dropdown-title hidden"><?php echo __($block->escapeHtml($dropdown->getName())) ?></div>
+        <div class="dropdown-element amshopby-clearer">
+            <ul class="make-list" <?php echo $block->getDropdownAttributes($dropdown)?>>
+                <?php $i = 1;
+                    $counter = 0;
+                    foreach($block->getDropdownValues($dropdown) as $v):
+	                //$slug = strtolower( $this->htmlEscape($v['label']) );
+	                        if($counter == 0) { $counter++; continue; }
+	                $slug = strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $v['label'] ) ); ?>
+                    <li value="<?php echo $v['value'] ?>"<?php if ($v['selected']):?>selected="selected"<?php endif ?>>
+                        <a href="amfinder/?find=<?php echo $slug  . '-' . $v['value'] ?>">
+                            <?php echo $block->escapeHtml($v['label']) ?>
+                        </a>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+<?php if($i == 1) break; endforeach ?>
+</div>

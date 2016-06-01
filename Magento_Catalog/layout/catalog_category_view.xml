@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+	    <referenceContainer name="page.main.title">
+			<block class="Digimix\MmyTitle\Block\MmyTitle" name="page.mmy.title" as="mmy_title" template="Digimix_MmyTitle::title.phtml"/>
+	    </referenceContainer>
+
+<!--
+		<referenceBlock name="breadcrumbs">
+			<action method="addCrumb" before="home">
+				<argument name="crumbName" xsi:type="string">Shop</argument>
+					<argument name="crumbInfo" xsi:type="array">
+						<item name="title" xsi:type="string">Go to the Shop</item>
+						<item name="label" xsi:type="string">Shop</item>
+						<item name="link" xsi:type="string">/amfinder</item>
+						<item name="first" xsi:type="string">true</item>
+					</argument>
+				</action>
+		</referenceBlock>
+-->
+
+    </body>
+</page>

@@ -1,0 +1,46 @@
+<?php
+//$categories = $this->getCategoryCollection();
+$categoryHelper = $this->getCategoryHelper();
+$canshowImg = $this->canShowImage();
+$title = $block->getTitle() ? __($block->getTitle()) : 'Categories';
+?>
+<div class="block-content catalog-category-list featured-categories">
+<?php
+$objectManagerr = \Magento\Framework\App\ObjectManager::getInstance();
+$categoryFactory = $objectManagerr->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+
+
+if( $this->getData('featcats') ){
+	$str_featcats = $this->getData('featcats');
+	$arr_featcats = explode(",",$str_featcats);
+} else {
+	$arr_featcats = ['3','23','4'];
+}
+
+//->addAttributeToFilter('url_key','charging-systems')
+
+$categoryy = $categoryFactory->create()
+        ->addAttributeToFilter('entity_id', ['in' => $arr_featcats])
+        ->addAttributeToSelect('*');
+
+foreach ($categoryy as $productt){ ?>
+
+	    <div class="category category-<?php echo $productt->getId(); ?>">
+	    	<a href="<?php echo $categoryHelper->getCategoryUrl($productt) ?>">
+	    		<?php if($canshowImg && $productt->getImageUrl()):?>
+	    		<figure>
+		    		<div class="img-wrapper" style="background:url(<?= $productt->getImageUrl(); ?>) center center;"></div>
+	    			<figcaption>
+		    			<h3 class="cat-title"><?php echo $productt->getName(); ?></h3>
+	    			</figcaption>
+	    		</figure>
+	    		<?php else:?>
+	    		<span class="cat-title"><?php echo $productt->getName(); ?></span>
+	    		<?php endif;?>
+	    	</a>
+	    </div>
+
+
+<?php } ?>
+
+</div>

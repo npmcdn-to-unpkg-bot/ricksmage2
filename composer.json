@@ -1,0 +1,42 @@
+{
+    "name": "digimix/theme-frontend-rme",
+    "description": "Rick's Motorsport Electrics Magento 2 Theme",
+     "authors": [
+        {
+            "name": "Christine Cardoso",
+            "email": "christine@digimix.co",
+            "homepage": "https://digimix.co/"
+         },
+         {
+            "name": "Michael Salafia",
+            "email": "michael@digimix.co",
+            "homepage": "https://digimix.co/"
+        }
+        ],
+            "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/digimix/Bannerslider-Magento2"
+        }
+    ],
+    "require": {
+        "php": "~7.0"
+    },
+    "require-dev": {
+		"digimix/Bannerslider-Magento2": "dev-master"
+	},
+    "type": "magento2-theme",
+    "version": "0.42.0-beta1",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "extra": {
+        "map": [
+            [
+                "*",
+                "frontend/Magento/blank"
+            ]
+        ]
+    }
+}
