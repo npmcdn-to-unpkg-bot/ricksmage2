@@ -35,7 +35,7 @@
 	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="facebook-link">
 	                <arguments>
 	                    <argument name="label" xsi:type="string">Facebook</argument>
-	                    <argument name="path" xsi:type="string">http://facebook.com/</argument>
+	                    <argument name="path" xsi:type="string">https://www.facebook.com/RicksMotorsportElectricsInc/</argument>
 		                <argument name="attributes" xsi:type="array">
 							<item name="class" xsi:type="string">icon menu-facebook</item>
 						</argument>
@@ -44,7 +44,7 @@
 	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="twitter-link">
 	                <arguments>
 	                    <argument name="label" xsi:type="string">Twitter</argument>
-	                    <argument name="path" xsi:type="string">http://twitter.com/</argument>
+	                    <argument name="path" xsi:type="string">https://twitter.com/ricksmotor</argument>
 		                <argument name="attributes" xsi:type="array">
 							<item name="class" xsi:type="string">icon menu-twitter</item>
 						</argument>
@@ -53,7 +53,7 @@
 	            <block class="Magento\Framework\View\Element\Html\Link\Current" name="youtube-link">
 	                <arguments>
 	                    <argument name="label" xsi:type="string">Youtube</argument>
-	                    <argument name="path" xsi:type="string">http://youtube.com/</argument>
+	                    <argument name="path" xsi:type="string">https://www.youtube.com/user/RicksElectrics</argument>
 		                <argument name="attributes" xsi:type="array">
 							<item name="class" xsi:type="string">icon menu-youtube</item>
 						</argument>
@@ -63,7 +63,7 @@
 	                <arguments>
 	                    <argument name="label" xsi:type="string">blog.ricksmotorsportelectric.com
 </argument>
-	                    <argument name="path" xsi:type="string">tips</argument>
+	                    <argument name="path" xsi:type="string">http://blog.ricksmotorsportelectric.com/</argument>
 		                <argument name="attributes" xsi:type="array">
 							<item name="class" xsi:type="string">menu-blog</item>
 						</argument>
