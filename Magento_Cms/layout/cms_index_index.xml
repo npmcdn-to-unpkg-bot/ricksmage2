@@ -4,7 +4,7 @@
 
    <reference name="head">
       <!--/ to add from root ie. js/yourmodulename/script.js -->
-      <action method="addJs"><script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js" src_type="url" /></action>
+      <action method="addJs"><script src="https://unpkg.com/flickity@1.2/dist/flickity.pkgd.min.js" src_type="url" /></action>
    </reference>
 
     <body>
